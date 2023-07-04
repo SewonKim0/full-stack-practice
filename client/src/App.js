@@ -6,11 +6,19 @@ function App() {
   const [data, setData] = useState(undefined);
   //effect: fetch data
   useEffect(() => {
-    fetch("https://helloworld-7yriik3v2q-uc.a.run.app")
+    alert("running fetch..."); //TEST
+    fetch("https://us-central1-full-stack-practice-0.cloudfunctions.net/app/api")
       .then((res) => {
+        alert("result returned!"); //TEST
         return res.text();
       })
+      .catch((err) => {
+        alert("error!");
+        alert(err.response.status);
+        console.log(err);
+      })
       .then((text) => {
+        alert(text); //TEST
         setData(text);
       })
   }, [])
