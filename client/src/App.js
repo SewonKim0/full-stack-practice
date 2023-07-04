@@ -6,13 +6,12 @@ function App() {
   const [data, setData] = useState(undefined);
   //effect: fetch data
   useEffect(() => {
-    fetch("/api")
+    fetch("https://helloworld-7yriik3v2q-uc.a.run.app")
       .then((res) => {
-        return res.json();
+        return res.text();
       })
-      .then((json) => {
-        alert(json); //TEST
-        setData(json);
+      .then((text) => {
+        setData(text);
       })
   }, [])
 
@@ -21,11 +20,7 @@ function App() {
       <p> Hello World! Hello. The data is on the next line! </p>
       {data === undefined ?
       <p> Loading... </p> :
-      <ul>
-        {data.map((value) => {
-          return <li> {value} </li>;
-        })}  
-      </ul>}
+      <p> {data} </p>}
     </div>
   );
 }
