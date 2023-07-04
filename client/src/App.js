@@ -17,7 +17,7 @@ function App() {
 
   return (
     <div className="App">
-      <p> Hello World! Hello. The data is on the next line! </p>
+      <p> Hello World! This is the updated text. </p>
       {data === undefined ?
       <p> Loading... </p> :
       <p> {data} </p>}
